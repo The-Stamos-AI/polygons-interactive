@@ -9,8 +9,6 @@
     --teal: #0d9488;
     --teal-dark: #0f766e;
     --teal-light: #ccfbf1;
-    --orange: #f4a261;
-    --peach: #f8d5a3;
     --card: #ffffff;
     --text: #1e293b;
     --muted: #64748b;
@@ -18,9 +16,7 @@
     --danger: #ef4444;
     --shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: linear-gradient(145deg, #f0fdfa 0%, #f8fafc 50%, #fff7ed 100%);
@@ -28,7 +24,6 @@
     min-height: 100vh;
     line-height: 1.5;
   }
-
   header {
     background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
     color: white;
@@ -36,334 +31,128 @@
     text-align: center;
     box-shadow: var(--shadow);
   }
-
-  header h1 {
-    font-size: clamp(1.7rem, 4.5vw, 2.4rem);
-    font-weight: 800;
-  }
-
-  header p {
-    opacity: 0.9;
-    margin-top: 0.25rem;
-    font-size: 1.05rem;
-  }
-
+  header h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); font-weight: 800; }
+  header p { opacity: 0.9; margin-top: 0.25rem; font-size: 1.05rem; }
   .tabs {
-    display: flex;
-    justify-content: center;
-    gap: 0.45rem;
-    padding: 1.1rem 1rem 0;
-    flex-wrap: wrap;
+    display: flex; justify-content: center; gap: 0.45rem;
+    padding: 1.1rem 1rem 0; flex-wrap: wrap;
   }
-
   .tab-btn {
-    background: white;
-    border: 2px solid #e2e8f0;
-    padding: 0.55rem 1.15rem;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: inherit;
-    color: var(--text);
+    background: white; border: 2px solid #e2e8f0;
+    padding: 0.55rem 1.15rem; border-radius: 999px;
+    font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; font-family: inherit; color: var(--text);
   }
-
-  .tab-btn:hover {
-    border-color: var(--teal);
-    background: #f0fdfa;
-  }
-
-  .tab-btn.active {
-    background: var(--teal);
-    border-color: var(--teal);
-    color: white;
-  }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 1.2rem 1rem 3rem;
-  }
-
+  .tab-btn:hover { border-color: var(--teal); background: #f0fdfa; }
+  .tab-btn.active { background: var(--teal); border-color: var(--teal); color: white; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 1.2rem 1rem 3rem; }
   .panel { display: none; }
-  .panel.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
-  }
-
+  .panel.active { display: block; animation: fadeIn 0.3s ease; }
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
   .definition-card {
-    background: var(--card);
-    border-radius: 18px;
-    padding: 1.4rem 1.5rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
-    border: 1px solid #e2e8f0;
+    background: var(--card); border-radius: 18px; padding: 1.4rem 1.5rem;
+    box-shadow: var(--shadow); margin-bottom: 1.5rem; border: 1px solid #e2e8f0;
   }
-
-  .definition-card h2 {
-    color: var(--teal-dark);
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-  }
-
+  .definition-card h2 { color: var(--teal-dark); font-size: 1.3rem; margin-bottom: 0.8rem; }
   .definition-card ul { list-style: none; }
-
   .definition-card li {
-    padding: 0.4rem 0;
-    padding-left: 1.6rem;
-    position: relative;
-    font-size: 1.04rem;
+    padding: 0.4rem 0; padding-left: 1.6rem; position: relative; font-size: 1.04rem;
   }
-
   .definition-card li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.8rem;
-    width: 9px;
-    height: 9px;
-    background: var(--teal);
-    border-radius: 50%;
+    content: ''; position: absolute; left: 0; top: 0.8rem;
+    width: 9px; height: 9px; background: var(--teal); border-radius: 50%;
   }
-
   .highlight {
     background: linear-gradient(120deg, #ccfbf1 0%, #99f6e4 100%);
-    padding: 0.1rem 0.35rem;
-    border-radius: 4px;
-    font-weight: 600;
+    padding: 0.1rem 0.35rem; border-radius: 4px; font-weight: 600;
   }
-
   .green-box {
-    background: #d1fae5;
-    border: 1px solid #a7f3d0;
-    color: #065f46;
-    border-radius: 12px;
-    padding: 0.9rem 1.1rem;
-    margin-bottom: 1.3rem;
-    font-size: 1.02rem;
+    background: #d1fae5; border: 1px solid #a7f3d0; color: #065f46;
+    border-radius: 12px; padding: 0.9rem 1.1rem; margin-bottom: 1.3rem; font-size: 1.02rem;
   }
-
   .section-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--teal-dark);
-    margin: 1.5rem 0 0.85rem;
+    font-size: 1.25rem; font-weight: 700; color: var(--teal-dark); margin: 1.5rem 0 0.85rem;
   }
-
   .shapes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.1rem;
-    margin-bottom: 1.4rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.1rem; margin-bottom: 1.4rem;
   }
-
   .compare-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.2rem;
-    margin-bottom: 1.5rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem; margin-bottom: 1.5rem;
   }
-
   .compare-card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 1.2rem;
-    box-shadow: var(--shadow);
-    border: 1px solid #e2e8f0;
+    background: var(--card); border-radius: 16px; padding: 1.2rem;
+    box-shadow: var(--shadow); border: 1px solid #e2e8f0;
   }
-
-  .compare-card h3 {
-    font-size: 1.1rem;
-    margin: 0.5rem 0 0.7rem;
-  }
-
+  .compare-card h3 { font-size: 1.1rem; margin: 0.5rem 0 0.7rem; }
   .badge {
-    display: inline-block;
-    padding: 0.25rem 0.7rem;
-    border-radius: 999px;
-    font-size: 0.82rem;
-    font-weight: 600;
+    display: inline-block; padding: 0.25rem 0.7rem; border-radius: 999px;
+    font-size: 0.82rem; font-weight: 600;
   }
-
   .badge.convex { background: #d1fae5; color: #065f46; }
   .badge.nonconvex { background: #fee2e2; color: #991b1b; }
   .badge.pass { background: #d1fae5; color: #065f46; }
   .badge.fail { background: #fee2e2; color: #991b1b; }
-
   .shape-card {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 1.1rem 0.8rem;
-    box-shadow: var(--shadow);
-    border: 2px solid transparent;
-    transition: all 0.25s ease;
-    cursor: pointer;
-    text-align: center;
+    background: var(--card); border-radius: 16px; padding: 1.1rem 0.8rem;
+    box-shadow: var(--shadow); border: 2px solid transparent;
+    transition: all 0.25s ease; cursor: pointer; text-align: center;
   }
-
-  .shape-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--teal);
-  }
-
+  .shape-card:hover { transform: translateY(-4px); border-color: var(--teal); }
   .shape-card.active {
-    border-color: var(--teal);
-    background: linear-gradient(to bottom, #f0fdfa, white);
+    border-color: var(--teal); background: linear-gradient(to bottom, #f0fdfa, white);
   }
-
   .shape-card.invalid { border-color: #fca5a5; }
-
-  .shape-svg {
-    width: 115px;
-    height: 115px;
-    margin: 0 auto 0.5rem;
-  }
-
-  .shape-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.15rem;
-  }
-
-  .shape-card .sides {
-    color: var(--muted);
-    font-size: 0.92rem;
-  }
-
-  .vertex-dot {
-    fill: var(--teal);
-    stroke: white;
-    stroke-width: 2;
-    r: 5.5;
-  }
-
+  .shape-svg { width: 115px; height: 115px; margin: 0 auto 0.5rem; }
+  .shape-card h3 { font-size: 1.1rem; margin-bottom: 0.15rem; }
+  .shape-card .sides { color: var(--muted); font-size: 0.92rem; }
+  .vertex-dot { fill: var(--teal); stroke: white; stroke-width: 2; r: 5.5; }
   .info-panel {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 1.3rem 1.4rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 1.5rem;
-    display: none;
+    background: var(--card); border-radius: 16px; padding: 1.3rem 1.4rem;
+    box-shadow: var(--shadow); margin-bottom: 1.5rem; display: none;
     border-left: 5px solid var(--teal);
   }
-
   .info-panel.show { display: block; }
-
-  .info-panel h3 {
-    color: var(--teal-dark);
-    margin-bottom: 0.35rem;
-    font-size: 1.2rem;
-  }
-
-  .stats {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.9rem;
-    flex-wrap: wrap;
-  }
-
+  .info-panel h3 { color: var(--teal-dark); margin-bottom: 0.35rem; font-size: 1.2rem; }
+  .stats { display: flex; gap: 0.8rem; margin-top: 0.9rem; flex-wrap: wrap; }
   .stat {
-    background: var(--teal-light);
-    padding: 0.45rem 1rem;
-    border-radius: 10px;
-    font-weight: 600;
-    color: var(--teal-dark);
-    font-size: 0.95rem;
+    background: var(--teal-light); padding: 0.45rem 1rem; border-radius: 10px;
+    font-weight: 600; color: var(--teal-dark); font-size: 0.95rem;
   }
-
   .quiz-card {
-    background: var(--card);
-    border-radius: 18px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
+    background: var(--card); border-radius: 18px; padding: 1.5rem; box-shadow: var(--shadow);
   }
-
-  .quiz-question {
-    font-size: 1.12rem;
-    font-weight: 600;
-    margin-bottom: 1.1rem;
-  }
-
+  .quiz-question { font-size: 1.12rem; font-weight: 600; margin-bottom: 1.1rem; }
   .options { display: grid; gap: 0.6rem; }
-
   .option-btn {
-    background: #f1f5f9;
-    border: 2px solid #e2e8f0;
-    padding: 0.8rem 1.1rem;
-    border-radius: 11px;
-    font-size: 1rem;
-    cursor: pointer;
-    text-align: left;
-    transition: all 0.2s;
-    font-family: inherit;
+    background: #f1f5f9; border: 2px solid #e2e8f0; padding: 0.8rem 1.1rem;
+    border-radius: 11px; font-size: 1rem; cursor: pointer; text-align: left;
+    transition: all 0.2s; font-family: inherit;
   }
-
-  .option-btn:hover {
-    border-color: var(--teal);
-    background: #f0fdfa;
-  }
-
-  .option-btn.correct {
-    background: #d1fae5;
-    border-color: var(--success);
-    color: #065f46;
-  }
-
-  .option-btn.wrong {
-    background: #fee2e2;
-    border-color: var(--danger);
-    color: #991b1b;
-  }
-
+  .option-btn:hover { border-color: var(--teal); background: #f0fdfa; }
+  .option-btn.correct { background: #d1fae5; border-color: var(--success); color: #065f46; }
+  .option-btn.wrong { background: #fee2e2; border-color: var(--danger); color: #991b1b; }
   .feedback {
-    margin-top: 0.9rem;
-    padding: 0.75rem 1rem;
-    border-radius: 10px;
-    font-weight: 500;
-    display: none;
+    margin-top: 0.9rem; padding: 0.75rem 1rem; border-radius: 10px;
+    font-weight: 500; display: none;
   }
-
   .feedback.show { display: block; }
   .feedback.success { background: #d1fae5; color: #065f46; }
   .feedback.error { background: #fee2e2; color: #991b1b; }
-
   .next-btn {
-    margin-top: 1.1rem;
-    background: var(--teal);
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 11px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: none;
+    margin-top: 1.1rem; background: var(--teal); color: white; border: none;
+    padding: 0.7rem 1.5rem; border-radius: 11px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; display: none;
   }
-
   .next-btn:hover { background: var(--teal-dark); }
   .next-btn.show { display: inline-block; }
-
-  .tip {
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.95rem;
-    margin-top: 2.2rem;
-  }
-
-  .note {
-    font-size: 0.95rem;
-    color: var(--muted);
-    margin-top: 0.6rem;
-  }
-
-  @media (max-width: 500px) {
-    .shape-svg { width: 100px; height: 100px; }
-  }
+  .tip { text-align: center; color: var(--muted); font-size: 0.95rem; margin-top: 2.2rem; }
+  .note { font-size: 0.95rem; color: var(--muted); margin-top: 0.6rem; }
+  @media (max-width: 500px) { .shape-svg { width: 100px; height: 100px; } }
 </style>
 </head>
 <body>
@@ -382,7 +171,7 @@
 
 <div class="container">
 
-  <!-- TAB 1: What is a Polygon -->
+  <!-- TAB 1 -->
   <div class="panel active" id="panel-what">
     <div class="definition-card">
       <h2>What is a Polygon?</h2>
@@ -393,38 +182,30 @@
         <li>Polygons are named by the number of sides (e.g. triangle, hexagon, 9-gon).</li>
       </ul>
     </div>
-
     <h2 class="section-title">Explore examples</h2>
     <p style="color:var(--muted); margin-bottom:1rem;">Click a shape to learn more.</p>
-
     <div class="shapes-grid">
       <div class="shape-card" data-name="Triangle" data-sides="3" data-vertices="3">
         <svg class="shape-svg" viewBox="0 0 120 120">
           <polygon points="60,15 105,100 15,100" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
           <circle class="vertex-dot" cx="60" cy="15"/><circle class="vertex-dot" cx="105" cy="100"/><circle class="vertex-dot" cx="15" cy="100"/>
         </svg>
-        <h3>Triangle</h3>
-        <div class="sides">3 sides</div>
+        <h3>Triangle</h3><div class="sides">3 sides</div>
       </div>
-
       <div class="shape-card" data-name="Quadrilateral" data-sides="4" data-vertices="4">
         <svg class="shape-svg" viewBox="0 0 120 120">
           <polygon points="22,30 100,20 108,90 20,100" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
           <circle class="vertex-dot" cx="22" cy="30"/><circle class="vertex-dot" cx="100" cy="20"/><circle class="vertex-dot" cx="108" cy="90"/><circle class="vertex-dot" cx="20" cy="100"/>
         </svg>
-        <h3>Quadrilateral</h3>
-        <div class="sides">4 sides</div>
+        <h3>Quadrilateral</h3><div class="sides">4 sides</div>
       </div>
-
       <div class="shape-card" data-name="Hexagon" data-sides="6" data-vertices="6">
         <svg class="shape-svg" viewBox="0 0 120 120">
           <polygon points="60,12 100,35 100,80 60,105 20,80 20,35" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
           <circle class="vertex-dot" cx="60" cy="12"/><circle class="vertex-dot" cx="100" cy="35"/><circle class="vertex-dot" cx="100" cy="80"/><circle class="vertex-dot" cx="60" cy="105"/><circle class="vertex-dot" cx="20" cy="80"/><circle class="vertex-dot" cx="20" cy="35"/>
         </svg>
-        <h3>Hexagon</h3>
-        <div class="sides">6 sides</div>
+        <h3>Hexagon</h3><div class="sides">6 sides</div>
       </div>
-
       <div class="shape-card invalid" data-name="Not a Polygon" data-sides="—" data-vertices="—">
         <svg class="shape-svg" viewBox="0 0 140 120">
           <path d="M20,30 L75,30 L35,95 L85,95 Z" fill="#fee2e2" stroke="#ef4444" stroke-width="3" fill-opacity="0.7"/>
@@ -433,11 +214,9 @@
             <line x1="14" y1="-14" x2="-14" y2="14" stroke="#ef4444" stroke-width="6" stroke-linecap="round"/>
           </g>
         </svg>
-        <h3>Not a Polygon</h3>
-        <div class="sides">Sides cross</div>
+        <h3>Not a Polygon</h3><div class="sides">Sides cross</div>
       </div>
     </div>
-
     <div class="info-panel" id="infoPanel1">
       <h3 id="infoTitle1">Shape</h3>
       <p id="infoDesc1"></p>
@@ -448,22 +227,20 @@
     </div>
   </div>
 
-  <!-- TAB 2: Names by Sides -->
+  <!-- TAB 2 -->
   <div class="panel" id="panel-names">
     <div class="definition-card">
       <h2>Polygon Names by Number of Sides</h2>
       <p>Polygons are named according to how many sides they have. Click any shape below to learn its name.</p>
     </div>
-
     <div class="shapes-grid" id="namesGrid"></div>
-
     <div class="info-panel" id="infoPanel2">
       <h3 id="infoTitle2">Shape</h3>
       <p id="infoDesc2"></p>
     </div>
   </div>
 
-  <!-- TAB 3: Convex / Non-convex -->
+  <!-- TAB 3: Convex / Non-convex (improved diagrams) -->
   <div class="panel" id="panel-convex">
     <div class="green-box">
       <strong>Convex polygon:</strong> A polygon which has no interior reflex angles. Every interior angle is less than 180°.
@@ -484,10 +261,10 @@
         <span class="badge nonconvex">Non-convex</span>
         <h3>Non-convex pentagon</h3>
         <svg viewBox="0 0 200 140" width="100%" height="130">
-          <polygon points="30,40 120,20 170,50 150,110 40,115 70,70" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
-          <circle cx="70" cy="70" r="10" fill="#ef4444"/>
-          <line x1="85" y1="70" x2="140" y2="70" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4"/>
-          <text x="145" y="74" fill="#b91c1c" font-size="14" font-weight="600">reflex</text>
+          <polygon points="25,35 115,18 175,45 155,110 35,115 85,75" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
+          <circle cx="85" cy="75" r="9" fill="#ef4444"/>
+          <line x1="100" y1="75" x2="155" y2="75" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4"/>
+          <text x="160" y="79" fill="#b91c1c" font-size="14" font-weight="600">reflex</text>
         </svg>
         <p><strong>5 vertices, one angle over 180°</strong></p>
         <p class="note">One interior angle is reflex (between 180° and 360°), which dents the shape inwards.</p>
@@ -517,20 +294,26 @@
       <div class="compare-card">
         <span class="badge fail">Test failed</span>
         <h3>A segment escapes</h3>
-        <svg viewBox="0 0 200 140" width="100%" height="130">
-          <polygon points="30,40 120,20 170,50 150,110 40,115 70,70" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
-          <line x1="50" y1="100" x2="145" y2="45" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,4"/>
-          <circle cx="50" cy="100" r="5" fill="#0f766e"/>
-          <circle cx="145" cy="45" r="5" fill="#0f766e"/>
-          <circle cx="95" cy="72" r="7" fill="#ef4444"/>
-          <text x="105" y="68" fill="#b91c1c" font-size="13" font-weight="600">exits</text>
+        <svg viewBox="0 0 200 150" width="100%" height="140">
+          <!-- Clear concave pentagon -->
+          <polygon points="30,30 120,15 175,50 145,120 40,125 95,80" 
+                    fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
+          <!-- Line that clearly leaves the shape through the dent -->
+          <line x1="55" y1="105" x2="155" y2="40" 
+                stroke="#dc2626" stroke-width="2.8" stroke-dasharray="7,4"/>
+          <!-- Endpoints inside the polygon -->
+          <circle cx="55" cy="105" r="6" fill="#0f766e"/>
+          <circle cx="155" cy="40" r="6" fill="#0f766e"/>
+          <!-- Highlight the part that is outside -->
+          <circle cx="105" cy="72" r="8" fill="#ef4444"/>
+          <text x="115" y="68" fill="#b91c1c" font-size="13" font-weight="700">outside</text>
         </svg>
-        <p class="note">This line segment goes outside the pentagon, so the pentagon is not convex.</p>
+        <p class="note">The straight line between two points inside the pentagon goes <strong>outside</strong> the shape. Therefore the pentagon is not convex.</p>
       </div>
     </div>
   </div>
 
-  <!-- TAB 4: Quiz -->
+  <!-- TAB 4 -->
   <div class="panel" id="panel-quiz">
     <div class="quiz-card">
       <div class="quiz-question" id="quizQuestion">Loading...</div>
@@ -544,7 +327,6 @@
 </div>
 
 <script>
-  // Tab switching
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -554,7 +336,6 @@
     });
   });
 
-  // Tab 1 data
   const shapeInfo1 = {
     "Triangle": "The simplest polygon. It has 3 straight sides and 3 vertices. The sum of its interior angles is always 180°.",
     "Quadrilateral": "A four-sided polygon. Common examples include squares, rectangles, parallelograms, trapeziums and rhombuses.",
@@ -575,7 +356,6 @@
     });
   });
 
-  // Tab 2 - Names
   const polygons = [
     { name: "Triangle", sides: 3, points: "55,12 100,95 10,95", desc: "A triangle has 3 sides and 3 vertices. It is the simplest polygon." },
     { name: "Quadrilateral", sides: 4, points: "20,25 95,15 105,85 15,95", desc: "A quadrilateral has 4 sides. Examples: square, rectangle, parallelogram, trapezium, rhombus." },
@@ -608,7 +388,6 @@
     namesGrid.appendChild(card);
   });
 
-  // Quiz (now includes convex questions)
   const questions = [
     { q: "A polygon must have sides that…", options: ["Can be curved", "Do not cross each other", "Are always equal", "Number at least 5"], correct: 1 },
     { q: "What is the plural of vertex?", options: ["Vertexes", "Vertices", "Verticies", "Vertexs"], correct: 1 },
