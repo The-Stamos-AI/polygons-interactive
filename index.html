@@ -51,17 +51,17 @@
   .tabs {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 1.2rem 1rem 0;
+    gap: 0.45rem;
+    padding: 1.1rem 1rem 0;
     flex-wrap: wrap;
   }
 
   .tab-btn {
     background: white;
     border: 2px solid #e2e8f0;
-    padding: 0.6rem 1.3rem;
+    padding: 0.55rem 1.15rem;
     border-radius: 999px;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
@@ -83,13 +83,10 @@
   .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 1.3rem 1rem 3rem;
+    padding: 1.2rem 1rem 3rem;
   }
 
-  .panel {
-    display: none;
-  }
-
+  .panel { display: none; }
   .panel.active {
     display: block;
     animation: fadeIn 0.3s ease;
@@ -103,34 +100,32 @@
   .definition-card {
     background: var(--card);
     border-radius: 18px;
-    padding: 1.5rem;
+    padding: 1.4rem 1.5rem;
     box-shadow: var(--shadow);
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.5rem;
     border: 1px solid #e2e8f0;
   }
 
   .definition-card h2 {
     color: var(--teal-dark);
-    font-size: 1.35rem;
-    margin-bottom: 0.9rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
   }
 
-  .definition-card ul {
-    list-style: none;
-  }
+  .definition-card ul { list-style: none; }
 
   .definition-card li {
-    padding: 0.45rem 0;
-    padding-left: 1.7rem;
+    padding: 0.4rem 0;
+    padding-left: 1.6rem;
     position: relative;
-    font-size: 1.05rem;
+    font-size: 1.04rem;
   }
 
   .definition-card li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0.85rem;
+    top: 0.8rem;
     width: 9px;
     height: 9px;
     background: var(--teal);
@@ -144,19 +139,62 @@
     font-weight: 600;
   }
 
+  .green-box {
+    background: #d1fae5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+    border-radius: 12px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 1.3rem;
+    font-size: 1.02rem;
+  }
+
   .section-title {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--teal-dark);
-    margin: 1.6rem 0 0.9rem;
+    margin: 1.5rem 0 0.85rem;
   }
 
   .shapes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.1rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
     margin-bottom: 1.5rem;
   }
+
+  .compare-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 1.2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid #e2e8f0;
+  }
+
+  .compare-card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.7rem;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .badge.convex { background: #d1fae5; color: #065f46; }
+  .badge.nonconvex { background: #fee2e2; color: #991b1b; }
+  .badge.pass { background: #d1fae5; color: #065f46; }
+  .badge.fail { background: #fee2e2; color: #991b1b; }
 
   .shape-card {
     background: var(--card);
@@ -179,9 +217,7 @@
     background: linear-gradient(to bottom, #f0fdfa, white);
   }
 
-  .shape-card.invalid {
-    border-color: #fca5a5;
-  }
+  .shape-card.invalid { border-color: #fca5a5; }
 
   .shape-svg {
     width: 115px;
@@ -253,10 +289,7 @@
     margin-bottom: 1.1rem;
   }
 
-  .options {
-    display: grid;
-    gap: 0.6rem;
-  }
+  .options { display: grid; gap: 0.6rem; }
 
   .option-btn {
     background: #f1f5f9;
@@ -322,6 +355,12 @@
     margin-top: 2.2rem;
   }
 
+  .note {
+    font-size: 0.95rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+  }
+
   @media (max-width: 500px) {
     .shape-svg { width: 100px; height: 100px; }
   }
@@ -337,6 +376,7 @@
 <div class="tabs">
   <button class="tab-btn active" data-tab="what">What is a Polygon?</button>
   <button class="tab-btn" data-tab="names">Names by Sides</button>
+  <button class="tab-btn" data-tab="convex">Convex / Non-convex</button>
   <button class="tab-btn" data-tab="quiz">Quiz</button>
 </div>
 
@@ -423,7 +463,74 @@
     </div>
   </div>
 
-  <!-- TAB 3: Quiz -->
+  <!-- TAB 3: Convex / Non-convex -->
+  <div class="panel" id="panel-convex">
+    <div class="green-box">
+      <strong>Convex polygon:</strong> A polygon which has no interior reflex angles. Every interior angle is less than 180°.
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <span class="badge convex">Convex</span>
+        <h3>Convex quadrilateral</h3>
+        <svg viewBox="0 0 200 140" width="100%" height="130">
+          <polygon points="40,40 160,25 175,105 30,115" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+        </svg>
+        <p><strong>4 vertices, all angles less than 180°</strong></p>
+        <p class="note">Every corner points outwards, so there are no reflex angles.</p>
+      </div>
+
+      <div class="compare-card">
+        <span class="badge nonconvex">Non-convex</span>
+        <h3>Non-convex pentagon</h3>
+        <svg viewBox="0 0 200 140" width="100%" height="130">
+          <polygon points="30,40 120,20 170,50 150,110 40,115 70,70" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
+          <circle cx="70" cy="70" r="10" fill="#ef4444"/>
+          <line x1="85" y1="70" x2="140" y2="70" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4"/>
+          <text x="145" y="74" fill="#b91c1c" font-size="14" font-weight="600">reflex</text>
+        </svg>
+        <p><strong>5 vertices, one angle over 180°</strong></p>
+        <p class="note">One interior angle is reflex (between 180° and 360°), which dents the shape inwards.</p>
+      </div>
+    </div>
+
+    <div class="green-box" style="margin-top:1.5rem;">
+      <strong>Another way to test:</strong> Every pair of points inside a convex polygon can be joined by a straight line segment which remains inside the polygon.
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <span class="badge pass">Test passed</span>
+        <h3>All segments stay inside</h3>
+        <svg viewBox="0 0 200 140" width="100%" height="130">
+          <polygon points="35,45 155,30 170,100 40,115" fill="#ccfbf1" stroke="#0d9488" stroke-width="3"/>
+          <line x1="60" y1="70" x2="130" y2="55" stroke="#0f766e" stroke-width="2.5"/>
+          <line x1="55" y1="95" x2="140" y2="90" stroke="#0f766e" stroke-width="2.5"/>
+          <circle cx="60" cy="70" r="5" fill="#0f766e"/>
+          <circle cx="130" cy="55" r="5" fill="#0f766e"/>
+          <circle cx="55" cy="95" r="5" fill="#0f766e"/>
+          <circle cx="140" cy="90" r="5" fill="#0f766e"/>
+        </svg>
+        <p class="note">All line segments between points remain inside the quadrilateral, so the quadrilateral is convex.</p>
+      </div>
+
+      <div class="compare-card">
+        <span class="badge fail">Test failed</span>
+        <h3>A segment escapes</h3>
+        <svg viewBox="0 0 200 140" width="100%" height="130">
+          <polygon points="30,40 120,20 170,50 150,110 40,115 70,70" fill="#fecaca" stroke="#dc2626" stroke-width="3"/>
+          <line x1="50" y1="100" x2="145" y2="45" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="6,4"/>
+          <circle cx="50" cy="100" r="5" fill="#0f766e"/>
+          <circle cx="145" cy="45" r="5" fill="#0f766e"/>
+          <circle cx="95" cy="72" r="7" fill="#ef4444"/>
+          <text x="105" y="68" fill="#b91c1c" font-size="13" font-weight="600">exits</text>
+        </svg>
+        <p class="note">This line segment goes outside the pentagon, so the pentagon is not convex.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: Quiz -->
   <div class="panel" id="panel-quiz">
     <div class="quiz-card">
       <div class="quiz-question" id="quizQuestion">Loading...</div>
@@ -481,7 +588,7 @@
   ];
 
   const namesGrid = document.getElementById('namesGrid');
-  polygons.forEach((p, i) => {
+  polygons.forEach((p) => {
     const card = document.createElement('div');
     card.className = 'shape-card';
     card.innerHTML = `
@@ -501,15 +608,16 @@
     namesGrid.appendChild(card);
   });
 
-  // Quiz
+  // Quiz (now includes convex questions)
   const questions = [
     { q: "A polygon must have sides that…", options: ["Can be curved", "Do not cross each other", "Are always equal", "Number at least 5"], correct: 1 },
     { q: "What is the plural of vertex?", options: ["Vertexes", "Vertices", "Verticies", "Vertexs"], correct: 1 },
     { q: "How many sides does a hexagon have?", options: ["5", "6", "7", "8"], correct: 1 },
     { q: "A polygon with 8 sides is called an…", options: ["Heptagon", "Octagon", "Nonagon", "Decagon"], correct: 1 },
-    { q: "Why is a crossed shape not a polygon?", options: ["Too many sides", "Its sides cross", "It is not closed", "It has curves"], correct: 1 },
-    { q: "A nonagon has how many sides?", options: ["7", "8", "9", "10"], correct: 2 },
-    { q: "Number of sides of a polygon equals the number of…", options: ["Diagonals", "Vertices", "Curves", "Faces"], correct: 1 }
+    { q: "In a convex polygon, every interior angle is…", options: ["Greater than 180°", "Equal to 180°", "Less than 180°", "A reflex angle"], correct: 2 },
+    { q: "A non-convex polygon has at least one…", options: ["Right angle", "Reflex interior angle", "Curved side", "Crossing side"], correct: 1 },
+    { q: "If a straight line between two points inside a polygon goes outside the shape, the polygon is…", options: ["Convex", "Regular", "Non-convex", "A triangle"], correct: 2 },
+    { q: "A nonagon has how many sides?", options: ["7", "8", "9", "10"], correct: 2 }
   ];
 
   let currentQ = 0, answered = false;
