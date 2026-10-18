@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polygons Interactive</title>
+<title>Polygons Interactive v2</title>
 <style>
   :root {
     --teal: #0d9488;
@@ -291,29 +291,28 @@
         <p class="note">All line segments between points remain inside the quadrilateral, so the quadrilateral is convex.</p>
       </div>
 
-      <!-- Clearer escaping line that visibly leaves the shape -->
       <div class="compare-card">
         <span class="badge fail">Test failed</span>
         <h3>A segment escapes</h3>
-        <svg viewBox="0 0 240 170" width="100%" height="155">
-          <!-- Strongly concave pentagon -->
-          <polygon points="30,40 140,20 200,60 170,140 45,145 110,95" 
-                    fill="#fecaca" stroke="#b91c1c" stroke-width="3.2"/>
+        <svg viewBox="0 0 260 180" width="100%" height="165">
+          <!-- Strongly dented concave pentagon -->
+          <polygon points="40,45 150,25 210,70 175,150 50,155 125,100" 
+                    fill="#fecaca" stroke="#b91c1c" stroke-width="3.5"/>
           
-          <!-- Dashed line that clearly cuts across the dent and goes outside -->
-          <line x1="60" y1="125" x2="175" y2="50" 
-                stroke="#dc2626" stroke-width="2.8" stroke-dasharray="7,4"/>
+          <!-- Line that clearly leaves the shape through the dent -->
+          <line x1="70" y1="135" x2="185" y2="55" 
+                stroke="#dc2626" stroke-width="3" stroke-dasharray="8,5"/>
           
-          <!-- Black endpoints (both inside the polygon) -->
-          <circle cx="60" cy="125" r="6.5" fill="#1e293b"/>
-          <circle cx="175" cy="50" r="6.5" fill="#1e293b"/>
+          <!-- Black endpoints (inside) -->
+          <circle cx="70" cy="135" r="7" fill="#1e293b"/>
+          <circle cx="185" cy="55" r="7" fill="#1e293b"/>
           
-          <!-- Red exit marker where the line is outside the shape -->
-          <circle cx="120" cy="85" r="9" fill="#ef4444"/>
+          <!-- Red marker on the outside portion of the line -->
+          <circle cx="130" cy="95" r="10" fill="#ef4444"/>
           
-          <!-- Label pointing to the exit -->
-          <line x1="130" y1="85" x2="185" y2="78" stroke="#b91c1c" stroke-width="1.6"/>
-          <text x="188" y="82" fill="#b91c1c" font-size="15" font-weight="700">exits</text>
+          <!-- Label -->
+          <line x1="142" y1="95" x2="200" y2="88" stroke="#b91c1c" stroke-width="1.8"/>
+          <text x="203" y="92" fill="#b91c1c" font-size="16" font-weight="700">exits</text>
         </svg>
         <p class="note">This line segment goes outside the pentagon, so the pentagon is not convex.</p>
       </div>
