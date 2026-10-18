@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Polygons Interactive v2</title>
+<title>Polygons Interactive</title>
 <style>
   :root {
     --teal: #0d9488;
@@ -152,6 +152,13 @@
   .next-btn.show { display: inline-block; }
   .tip { text-align: center; color: var(--muted); font-size: 0.95rem; margin-top: 2.2rem; }
   .note { font-size: 0.95rem; color: var(--muted); margin-top: 0.6rem; }
+  .exact-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0.5rem auto;
+    border-radius: 8px;
+  }
   @media (max-width: 500px) { .shape-svg { width: 100px; height: 100px; } }
 </style>
 </head>
@@ -291,29 +298,11 @@
         <p class="note">All line segments between points remain inside the quadrilateral, so the quadrilateral is convex.</p>
       </div>
 
+      <!-- Exact image provided by user -->
       <div class="compare-card">
         <span class="badge fail">Test failed</span>
         <h3>A segment escapes</h3>
-        <svg viewBox="0 0 260 180" width="100%" height="165">
-          <!-- Strongly dented concave pentagon -->
-          <polygon points="40,45 150,25 210,70 175,150 50,155 125,100" 
-                    fill="#fecaca" stroke="#b91c1c" stroke-width="3.5"/>
-          
-          <!-- Line that clearly leaves the shape through the dent -->
-          <line x1="70" y1="135" x2="185" y2="55" 
-                stroke="#dc2626" stroke-width="3" stroke-dasharray="8,5"/>
-          
-          <!-- Black endpoints (inside) -->
-          <circle cx="70" cy="135" r="7" fill="#1e293b"/>
-          <circle cx="185" cy="55" r="7" fill="#1e293b"/>
-          
-          <!-- Red marker on the outside portion of the line -->
-          <circle cx="130" cy="95" r="10" fill="#ef4444"/>
-          
-          <!-- Label -->
-          <line x1="142" y1="95" x2="200" y2="88" stroke="#b91c1c" stroke-width="1.8"/>
-          <text x="203" y="92" fill="#b91c1c" font-size="16" font-weight="700">exits</text>
-        </svg>
+        <img class="exact-img" src="data:image/png;base64,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" alt="Line segment goes outside the pentagon">
         <p class="note">This line segment goes outside the pentagon, so the pentagon is not convex.</p>
       </div>
     </div>
